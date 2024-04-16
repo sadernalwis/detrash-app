@@ -1,10 +1,8 @@
 pre-commit:
   commands:
+    # frontend-linter:
+    # run: npm lint
   commit-msg:
     scripts:
-      "commitlint.sh":
+      'commitlint.sh':
         runner: bash
-# pre-push:
-#   commands:
-# anotherTesting:
-#   run: npm test
