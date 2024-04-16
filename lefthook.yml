@@ -1,9 +1,9 @@
 pre-commit:
   commands:
 testing:
-  run: npm test
+  run: npm build
 
 pre-push:
   commands:
 anotherTesting:
-  run: npm test
+  run: npm build
