@@ -27,17 +27,17 @@ export const SigninScreen = () => {
           </nav>
         </div>
 
-        <div className="flex flex-col p-5 gap-5 justify-center  max-w-xl">
+        <div className="flex flex-col p-5 gap-5 justify-center  max-w-xl flex-1">
           <h1 className="text-6xl font-bold">
             {t("home.welcomeMessage1")}
             <br />{" "}
             <span className="text-primary">{t("home.welcomeMessage2")}</span>
           </h1>
           <p className="text-base  text-gray-500">{t("home.description")}</p>
-          <Button className="">{t("home.login")}</Button>
+          <Button size="lg">{t("home.login")}</Button>
         </div>
 
-        <div className="absolute bottom-0 p-5">
+        <div className="flex  justify-center p-5">
           <LocaleToggler />
         </div>
       </main>
