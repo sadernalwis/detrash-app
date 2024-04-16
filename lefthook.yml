@@ -1,7 +1,7 @@
 pre-commit:
   commands:
 commit-lint:
-  run: npm run commitlint
+  run: npm commitlint
 # pre-push:
 #   commands:
 # anotherTesting:
