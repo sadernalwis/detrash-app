@@ -1,9 +1,8 @@
 pre-commit:
   commands:
-testing:
-  run: npm build
-
-pre-push:
-  commands:
-anotherTesting:
-  run: npm build
+commit-lint:
+  run: npm run commitlint
+# pre-push:
+#   commands:
+# anotherTesting:
+#   run: npm test

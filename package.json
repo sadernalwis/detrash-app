@@ -43,6 +43,8 @@
   },
   "devDependencies": {
     "@capacitor/cli": "^5.7.4",
+    "@commitlint/cli": "^19.2.2",
+    "@commitlint/config-conventional": "^19.2.2",
     "@iconify/react": "^4.1.1",
     "@testing-library/react": "^15.0.2",
     "@types/node": "^20",
