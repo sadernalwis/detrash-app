@@ -1,6 +1,6 @@
 pre-commit:
   commands:
-commit-lint:
+lint-commit:
   run: npm commitlint
 # pre-push:
 #   commands:
