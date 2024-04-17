@@ -1,7 +1,5 @@
 pre-commit:
   commands:
-    # frontend-linter:
-    # run: npm lint
   commit-msg:
     scripts:
       'commitlint.sh':
