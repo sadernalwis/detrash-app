@@ -1,5 +1,5 @@
 {
-  "extends": ["next/core-web-vitals", "plugin:unicorn/recommended"],
+  "extends": ["next", "next/core-web-vitals", "plugin:unicorn/recommended"],
   "parser": "@typescript-eslint/parser",
   "plugins": ["canonical"],
   "rules": {
