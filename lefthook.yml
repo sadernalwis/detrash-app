@@ -1,13 +1,5 @@
-# pre-commit:
-#   parallel: true
-#   commands:
-#     eslint:
-#       glob: '*.{js,ts,jsx,tsx}'
-#       run: npm lint {staged_files}
-
-commit-msg:
-  parallel: true
-  commands:
+pre-commit:
+  commit-msg:
     scripts:
-      commitlint.sh:
+      'commitlint.sh':
         runner: bash
