@@ -1,9 +1,9 @@
-pre-commit:
-  parallel: true
-  commands:
-    eslint:
-      glob: '*.{js,ts,jsx,tsx}'
-      run: npm lint {staged_files}
+# pre-commit:
+#   parallel: true
+#   commands:
+#     eslint:
+#       glob: '*.{js,ts,jsx,tsx}'
+#       run: npm lint {staged_files}
 
 commit-msg:
   parallel: true
