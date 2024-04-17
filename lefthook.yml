@@ -1,9 +1,13 @@
 pre-commit:
-parallel: true
+  parallel: true
+  commands: # Corrected key name from "comands" to "commands"
+    eslint:
+      glob: '*.{js,ts,jsx,tsx}'
+      run: npm run lint {staged_files}
+
 commit-msg:
-scripts:
-'commitlint.sh':
-runner: bash
-eslint:
-glob: '*.{js,ts,jsx,tsx}'
-run: npm run lint {staged_files}
+  parallel: true
+  commands: # Corrected key name from "comands" to "commands"
+    scripts:
+      commitlint.sh:
+        runner: bash
