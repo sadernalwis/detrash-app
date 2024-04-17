@@ -1,4 +1,5 @@
 pre-commit:
+  parallel: true
   commands:
     lint:
       glob: 'src/**/*.{ts,tsx,js,jsx}'
@@ -6,9 +7,5 @@ pre-commit:
     format:
       glob: 'src/**/*.{ts,tsx,js,jsx,css,json}'
       run: npx prettier --write {staged_files} && git add {staged_files}
-commit-msg:
-  parallel: true
-  commands:
-    scripts:
-    'commitlint.sh':
-      runner: bash
+    commit-msg:
+      command: npx commitlint --edit
