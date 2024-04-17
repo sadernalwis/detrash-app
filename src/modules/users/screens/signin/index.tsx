@@ -3,8 +3,10 @@
 import LocaleToggler from '@/components/locale-toggler';
 import { Button } from '@/components/ui/button';
 import { useI18n } from '@/locales/client';
+import Link from 'next/link';
 
 import Image from 'next/image';
+import { Suspense } from 'react';
 
 export default function SigninScreen() {
   const t = useI18n();
@@ -28,11 +30,17 @@ export default function SigninScreen() {
             <br /> <span className="text-primary">{t('home.welcomeMessage2')}</span>
           </h1>
           <p className="text-base  text-gray-500">{t('home.description')}</p>
-          <Button size="lg">{t('home.login')}</Button>
+          <Link href="/api/auth/login">
+            <Button size="lg" className="w-full">
+              {t('home.login')}
+            </Button>
+          </Link>
         </div>
 
         <div className="flex  justify-center p-5">
-          <LocaleToggler />
+          <Suspense>
+            <LocaleToggler />
+          </Suspense>
         </div>
       </main>
       <aside className="relative hidden h-lvh flex-1 flex-shrink basis-1/4 flex-col items-center justify-center xl:flex">
@@ -42,7 +50,6 @@ export default function SigninScreen() {
           src="/assets/bg/ocean.jpg"
           alt="Ocean"
         />
-        quotes
       </aside>
     </div>
   );

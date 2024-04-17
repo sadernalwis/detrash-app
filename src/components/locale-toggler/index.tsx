@@ -1,27 +1,27 @@
-"use client";
-import { CheckIcon, LanguagesIcon } from "lucide-react";
+'use client';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuShortcut,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
-import { useChangeLocale, useCurrentLocale } from "@/locales/client";
-import { Button } from "../ui/button";
+} from '@/components/ui/dropdown-menu';
+import { useChangeLocale, useCurrentLocale } from '@/locales/client';
+import { CheckIcon, LanguagesIcon } from 'lucide-react';
+import { Button } from '../ui/button';
 
 const locales = [
   {
-    name: "English",
-    value: "en",
+    name: 'English',
+    value: 'en',
   },
   {
-    name: "Español",
-    value: "es",
+    name: 'Español',
+    value: 'es',
   },
   {
-    name: "Português",
-    value: "pt",
+    name: 'Português',
+    value: 'pt',
   },
 ];
 
@@ -49,7 +49,7 @@ export default function LocaleToggler() {
               <DropdownMenuShortcut>
                 <CheckIcon className="h-4 w-4" />
               </DropdownMenuShortcut>
-            ) : null}
+            ) : undefined}
           </DropdownMenuItem>
         ))}
       </DropdownMenuContent>
