@@ -6,7 +6,7 @@ import { useI18n } from "@/locales/client";
 
 import Image from "next/image";
 
-export const SigninScreen = () => {
+export default function SigninScreen() {
   const t = useI18n();
 
   return (
@@ -21,7 +21,7 @@ export const SigninScreen = () => {
               alt="Recy Logo"
             />
 
-            <Button variant="secondary" className="uppercase" size="lg">
+            <Button variant="secondary" className="uppercase" size="sm">
               whitepaper
             </Button>
           </nav>
@@ -52,4 +52,4 @@ export const SigninScreen = () => {
       </aside>
     </div>
   );
-};
+}

@@ -1,14 +1,10 @@
-"use client";
-import { createI18nClient } from "next-international/client";
+'use client';
 
-export const {
-  useI18n,
-  useScopedI18n,
-  I18nProviderClient,
-  useCurrentLocale,
-  useChangeLocale,
-} = createI18nClient({
-  en: () => import("../en"),
-  pt: () => import("../pt"),
-  es: () => import("../es"),
-});
+import { createI18nClient } from 'next-international/client';
+
+export const { useI18n, useScopedI18n, I18nProviderClient, useCurrentLocale, useChangeLocale } =
+  createI18nClient({
+    en: () => import('../en'),
+    es: () => import('../es'),
+    pt: () => import('../pt'),
+  });
