@@ -9,6 +9,8 @@ import Image from "next/image";
 export default function SigninScreen() {
   const t = useI18n();
 
+  console.log('teste')
+
   return (
     <div className="flex flex-1 justify-between h-lvh">
       <main className="flex-1 flex-shrink-0 flex flex-col justify-center h-full">
