@@ -4,10 +4,10 @@ export const LINKS = {
     LOGOUT: '/api/auth/logout',
   },
   NAV: {
-    ADMIN: '/admin',
+    ADMIN: '/dashboard/admin',
     DASHBOARD: '/dashboard',
     HOME: '/',
     PROFILE: '/profile',
-    SUBMIT_FORM: '/submit',
+    SUBMIT_FORM: 'submit',
   },
 };

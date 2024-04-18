@@ -2,7 +2,6 @@
 
 import LocaleToggler from '@/components/locale-toggler';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { Button } from '@/components/ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -20,6 +19,7 @@ import { LINKS } from '@/constants';
 import { UserProfile } from '@auth0/nextjs-auth0/client';
 import { Icon } from '@iconify/react';
 import Link from 'next/link';
+import { Suspense } from 'react';
 
 type HeaderProps = {
   user?: UserProfile;
@@ -48,11 +48,11 @@ export const Menu = ({ user }: HeaderProps) => {
 
         <NavigationMenuItem>
           <DropdownMenu>
-            <DropdownMenuTrigger className="px-4">
-              <Button variant="ghost">
-                Connect Wallet{' '}
+            <DropdownMenuTrigger>
+              <div className={navigationMenuTriggerStyle()}>
+                Connect Wallet
                 <Icon icon="ph:wallet-thin" width="16" height="16" className="ml-1" />
-              </Button>
+              </div>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuItem>adasd</DropdownMenuItem>
@@ -61,7 +61,9 @@ export const Menu = ({ user }: HeaderProps) => {
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <LocaleToggler />
+          <Suspense>
+            <LocaleToggler />
+          </Suspense>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
