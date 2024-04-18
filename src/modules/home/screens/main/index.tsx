@@ -16,11 +16,13 @@ export default function HomeScreen() {
       <main className="flex h-full flex-1 flex-shrink-0 flex-col justify-center">
         <div className="absolute top-0 z-10 w-full p-5 ">
           <nav className="flex items-center justify-between">
-            <Image src="/assets/brand/recy-logo.png" width={88} height={88} alt="Recy Logo" />
+            <Image src="/assets/brand/recy-logo.png" width={64} height={64} alt="Recy Logo" />
 
-            <Button variant="secondary" className="uppercase" size="sm">
-              whitepaper
-            </Button>
+            <Link href={LINKS.WITHBOARD} target="_blank">
+              <Button variant="secondary" className="uppercase" size="sm">
+                whitepaper
+              </Button>
+            </Link>
           </nav>
         </div>
 

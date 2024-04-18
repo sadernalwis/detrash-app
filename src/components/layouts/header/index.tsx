@@ -9,9 +9,9 @@ export const Header = () => {
   const { user } = useUser();
 
   return (
-    <header className="mx-auto flex items-center justify-between sm:container">
+    <header className="mx-auto my-5 flex items-center justify-between sm:container">
       <Link href="/dashboard">
-        <Image src="/assets/brand/recy-logo.png" width={88} height={88} alt="Recy Logo" />
+        <Image src="/assets/brand/recy-logo.png" width={64} height={64} alt="Recy Logo" />
       </Link>
 
       <Menu user={user} />

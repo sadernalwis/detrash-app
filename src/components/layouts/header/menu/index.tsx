@@ -37,7 +37,14 @@ export const Menu = ({ user }: HeaderProps) => {
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
-
+        <NavigationMenuItem>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+            <Link href={LINKS.WITHBOARD} target="_blank">
+              Whiteboard
+            </Link>
+            <Icon icon="fluent:whiteboard-16-regular" width="16" height="16" className="ml-1" />
+          </NavigationMenuLink>
+        </NavigationMenuItem>
         <NavigationMenuItem>
           <Link href={LINKS.NAV.SUBMIT_FORM} legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>

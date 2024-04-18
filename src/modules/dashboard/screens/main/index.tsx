@@ -314,6 +314,8 @@ export default function DashboardScreen() {
           </ResponsiveContainer>
         </section>
       </section>
+
+      <section>Forms submitted</section>
     </section>
   );
 }
