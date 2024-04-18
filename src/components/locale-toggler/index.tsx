@@ -10,6 +10,7 @@ import { useChangeLocale, useCurrentLocale } from '@/locales/client';
 import { CheckIcon, LanguagesIcon } from 'lucide-react';
 import { Button } from '../ui/button';
 
+// Todo: add icons for each language
 const locales = [
   {
     name: 'English',

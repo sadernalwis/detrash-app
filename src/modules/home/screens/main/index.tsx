@@ -1,14 +1,14 @@
 'use client';
-
 import LocaleToggler from '@/components/locale-toggler';
 import { Button } from '@/components/ui/button';
+import { LINKS } from '@/constants/';
 import { useI18n } from '@/locales/client';
 import Link from 'next/link';
 
 import Image from 'next/image';
 import { Suspense } from 'react';
 
-export default function SigninScreen() {
+export default function HomeScreen() {
   const t = useI18n();
 
   return (
@@ -30,7 +30,7 @@ export default function SigninScreen() {
             <br /> <span className="text-primary">{t('home.welcomeMessage2')}</span>
           </h1>
           <p className="text-base  text-gray-500">{t('home.description')}</p>
-          <Link href="/api/auth/login">
+          <Link href={LINKS.AUTH.LOGIN}>
             <Button size="lg" className="w-full">
               {t('home.login')}
             </Button>

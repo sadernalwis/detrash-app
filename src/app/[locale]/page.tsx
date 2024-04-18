@@ -1,5 +1,13 @@
-import SigninScreen from '@/modules/users/screens/signin';
+import HomeScreen from '@/modules/home/screens/main';
+import { getSession } from '@auth0/nextjs-auth0';
+import { redirect } from 'next/navigation';
 
 export default async function Home() {
-  return <SigninScreen />;
+  const session = await getSession();
+
+  if (session) {
+    redirect('/dashboard');
+  }
+
+  return <HomeScreen />;
 }
