@@ -1,9 +1,8 @@
 import { useUser } from '@auth0/nextjs-auth0/client';
-
+import { Icon } from '@iconify/react';
 import { Bar, BarChart, ResponsiveContainer, XAxis, YAxis } from 'recharts';
 
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Icon } from '@iconify/react';
 
 const data = [
   {
@@ -34,6 +33,7 @@ const data = [
 
 export default function DashboardScreen() {
   const { user } = useUser();
+
   return (
     <section className="flex flex-col gap-8 py-5 sm:container">
       <h1 className="text-xl font-bold text-gray-900 sm:text-3xl">Welcome, {user?.name}</h1>
@@ -315,7 +315,14 @@ export default function DashboardScreen() {
         </section>
       </section>
 
-      <section>Forms submitted</section>
+      <section>
+        <Card>
+          <CardHeader>
+            <CardTitle>Forms submitted</CardTitle>
+          </CardHeader>
+          <CardContent>Forms {/* TODO: Data Table */}</CardContent>
+        </Card>
+      </section>
     </section>
   );
 }

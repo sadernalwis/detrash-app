@@ -1,5 +1,10 @@
 'use client';
 
+import { Suspense } from 'react';
+import { UserProfile } from '@auth0/nextjs-auth0/client';
+import { Icon } from '@iconify/react';
+import Link from 'next/link';
+
 import LocaleToggler from '@/components/locale-toggler';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import {
@@ -16,10 +21,6 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu';
 import { LINKS } from '@/constants';
-import { UserProfile } from '@auth0/nextjs-auth0/client';
-import { Icon } from '@iconify/react';
-import Link from 'next/link';
-import { Suspense } from 'react';
 
 type HeaderProps = {
   user?: UserProfile;
@@ -32,21 +33,19 @@ export const Menu = ({ user }: HeaderProps) => {
         <NavigationMenuItem>
           <Link href={LINKS.NAV.ADMIN} legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Admin{' '}
+              Admin
               <Icon icon="ic:sharp-admin-panel-settings" width="16" height="16" className="ml-1" />
             </NavigationMenuLink>
           </Link>
         </NavigationMenuItem>
+
         <NavigationMenuItem>
-          <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-            <Link href={LINKS.WITHBOARD} target="_blank">
-              Whiteboard
-            </Link>
-            <Icon icon="fluent:whiteboard-16-regular" width="16" height="16" className="ml-1" />
-          </NavigationMenuLink>
-        </NavigationMenuItem>
-        <NavigationMenuItem>
-          <Link href={LINKS.NAV.SUBMIT_FORM} legacyBehavior passHref>
+          <Link
+            className={navigationMenuTriggerStyle()}
+            href={LINKS.NAV.SUBMIT_FORM}
+            legacyBehavior
+            passHref
+          >
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
               Submit Form <Icon icon="ph:recycle" width="16" height="16" className="ml-1" />
             </NavigationMenuLink>
@@ -62,7 +61,7 @@ export const Menu = ({ user }: HeaderProps) => {
               </div>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
-              <DropdownMenuItem>adasd</DropdownMenuItem>
+              <DropdownMenuItem>Wallet</DropdownMenuItem>
             </DropdownMenuContent>
           </DropdownMenu>
         </NavigationMenuItem>

@@ -1,7 +1,6 @@
-import { createI18nMiddleware } from 'next-international/middleware';
-import { NextRequest } from 'next/server';
-
 import { withMiddlewareAuthRequired } from '@auth0/nextjs-auth0/edge';
+import { NextRequest } from 'next/server';
+import { createI18nMiddleware } from 'next-international/middleware';
 
 export default withMiddlewareAuthRequired();
 

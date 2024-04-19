@@ -1,7 +1,8 @@
 'use client';
 
-import { UserProvider } from '@auth0/nextjs-auth0/client';
 import { ReactNode } from 'react';
+import { UserProvider } from '@auth0/nextjs-auth0/client';
+
 import { I18nProviderClient } from '../../locales/client';
 
 export default function Providers({ locale, children }: { locale: string; children: ReactNode }) {

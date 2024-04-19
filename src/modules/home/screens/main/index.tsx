@@ -1,12 +1,12 @@
 'use client';
+import { Suspense } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
+
 import LocaleToggler from '@/components/locale-toggler';
 import { Button } from '@/components/ui/button';
 import { LINKS } from '@/constants/';
 import { useI18n } from '@/locales/client';
-import Link from 'next/link';
-
-import Image from 'next/image';
-import { Suspense } from 'react';
 
 export default function HomeScreen() {
   const t = useI18n();
@@ -18,7 +18,7 @@ export default function HomeScreen() {
           <nav className="flex items-center justify-between">
             <Image src="/assets/brand/recy-logo.png" width={64} height={64} alt="Recy Logo" />
 
-            <Link href={LINKS.WITHBOARD} target="_blank">
+            <Link href={LINKS.WITHEBOARD} target="_blank">
               <Button variant="secondary" className="uppercase" size="sm">
                 whitepaper
               </Button>

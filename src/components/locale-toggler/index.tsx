@@ -1,4 +1,6 @@
 'use client';
+import { CheckIcon, LanguagesIcon } from 'lucide-react';
+
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -7,7 +9,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
 import { useChangeLocale, useCurrentLocale } from '@/locales/client';
-import { CheckIcon, LanguagesIcon } from 'lucide-react';
+
 import { Button } from '../ui/button';
 
 // Todo: add icons for each language

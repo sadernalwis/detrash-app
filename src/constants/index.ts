@@ -4,11 +4,11 @@ export const LINKS = {
     LOGOUT: '/api/auth/logout',
   },
   NAV: {
-    ADMIN: '/dashboard/admin',
+    ADMIN: '/admin',
     DASHBOARD: '/dashboard',
     HOME: '/',
     PROFILE: '/profile',
-    SUBMIT_FORM: 'submit',
+    SUBMIT_FORM: '/submit',
   },
-  WITHBOARD: 'https://drive.google.com/file/d/1uAUCRwMjmjFOS-0XHziC9bSBf5_udLew/view',
+  WITHEBOARD: 'https://drive.google.com/file/d/1uAUCRwMjmjFOS-0XHziC9bSBf5_udLew/view',
 };
