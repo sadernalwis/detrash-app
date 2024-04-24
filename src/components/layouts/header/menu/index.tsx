@@ -1,7 +1,7 @@
 'use client';
 
 import { Suspense } from 'react';
-import { UserProfile, useUser } from '@auth0/nextjs-auth0/client';
+import { useUser } from '@auth0/nextjs-auth0/client';
 import { Icon } from '@iconify/react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -23,10 +23,6 @@ import {
 } from '@/components/ui/navigation-menu';
 import { LINKS } from '@/constants';
 
-type HeaderProps = {
-  user?: UserProfile;
-};
-
 export const Menu = () => {
   const { user } = useUser();
 
@@ -34,7 +30,7 @@ export const Menu = () => {
     <NavigationMenu className="flex min-w-full justify-between">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <NavigationMenuLink href={LINKS.NAV.HOME}>
+          <Link href={LINKS.NAV.HOME}>
             <Image
               src="/assets/brand/recy-logo.png"
               width={64}
@@ -42,34 +38,32 @@ export const Menu = () => {
               alt="Recy Logo"
               className="mr-4"
             />
-          </NavigationMenuLink>
+          </Link>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <NavigationMenuLink className={navigationMenuTriggerStyle()} href={LINKS.NAV.DASHBOARD}>
+          <Link className={navigationMenuTriggerStyle()} href={LINKS.NAV.DASHBOARD}>
             Dashboard
-            <Suspense>
-              <Icon
-                icon="material-symbols-light:team-dashboard-outline"
-                width="16"
-                height="16"
-                className="ml-1"
-              />
-            </Suspense>
-          </NavigationMenuLink>
+            <Icon
+              icon="material-symbols-light:team-dashboard-outline"
+              width="16"
+              height="16"
+              className="ml-1"
+            />
+          </Link>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <NavigationMenuLink className={navigationMenuTriggerStyle()} href={LINKS.NAV.SUBMIT_FORM}>
+          <Link className={navigationMenuTriggerStyle()} href={LINKS.NAV.SUBMIT_FORM}>
             Submit Form <Icon icon="ph:recycle" width="16" height="16" className="ml-1" />
-          </NavigationMenuLink>
+          </Link>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <NavigationMenuLink className={navigationMenuTriggerStyle()} href={LINKS.NAV.ADMIN}>
+          <Link className={navigationMenuTriggerStyle()} href={LINKS.NAV.ADMIN}>
             Admin
             <Icon icon="ic:sharp-admin-panel-settings" width="16" height="16" className="ml-1" />
-          </NavigationMenuLink>
+          </Link>
         </NavigationMenuItem>
       </NavigationMenuList>
 

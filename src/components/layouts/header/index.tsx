@@ -1,5 +1,3 @@
-'use client';
-
 import { Menu } from './menu';
 
 export const Header = () => {
