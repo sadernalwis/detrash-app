@@ -35,7 +35,7 @@ export default function DashboardScreen() {
   const { user } = useUser();
 
   return (
-    <section className="flex flex-col gap-8 py-5 sm:container">
+    <section className="container flex flex-col gap-8 py-5">
       <h1 className="text-xl font-bold text-gray-900 sm:text-3xl">Welcome, {user?.name}</h1>
 
       <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

@@ -1,8 +1,9 @@
 'use client';
 
 import { Suspense } from 'react';
-import { UserProfile } from '@auth0/nextjs-auth0/client';
+import { UserProfile, useUser } from '@auth0/nextjs-auth0/client';
 import { Icon } from '@iconify/react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import LocaleToggler from '@/components/locale-toggler';
@@ -26,39 +27,58 @@ type HeaderProps = {
   user?: UserProfile;
 };
 
-export const Menu = ({ user }: HeaderProps) => {
+export const Menu = () => {
+  const { user } = useUser();
+
   return (
-    <NavigationMenu>
+    <NavigationMenu className="flex min-w-full justify-between">
       <NavigationMenuList>
         <NavigationMenuItem>
-          <Link href={LINKS.NAV.ADMIN} legacyBehavior passHref>
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Admin
-              <Icon icon="ic:sharp-admin-panel-settings" width="16" height="16" className="ml-1" />
-            </NavigationMenuLink>
-          </Link>
+          <NavigationMenuLink href={LINKS.NAV.HOME}>
+            <Image
+              src="/assets/brand/recy-logo.png"
+              width={64}
+              height={64}
+              alt="Recy Logo"
+              className="mr-4"
+            />
+          </NavigationMenuLink>
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <Link
-            className={navigationMenuTriggerStyle()}
-            href={LINKS.NAV.SUBMIT_FORM}
-            legacyBehavior
-            passHref
-          >
-            <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-              Submit Form <Icon icon="ph:recycle" width="16" height="16" className="ml-1" />
-            </NavigationMenuLink>
-          </Link>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()} href={LINKS.NAV.DASHBOARD}>
+            Dashboard
+            <Icon
+              icon="material-symbols-light:team-dashboard-outline"
+              width="16"
+              height="16"
+              className="ml-1"
+            />
+          </NavigationMenuLink>
         </NavigationMenuItem>
 
+        <NavigationMenuItem>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()} href={LINKS.NAV.SUBMIT_FORM}>
+            Submit Form <Icon icon="ph:recycle" width="16" height="16" className="ml-1" />
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <NavigationMenuLink className={navigationMenuTriggerStyle()} href={LINKS.NAV.ADMIN}>
+            Admin
+            <Icon icon="ic:sharp-admin-panel-settings" width="16" height="16" className="ml-1" />
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+      </NavigationMenuList>
+
+      <NavigationMenuList>
         <NavigationMenuItem>
           <DropdownMenu>
             <DropdownMenuTrigger>
-              <div className={navigationMenuTriggerStyle()}>
+              <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                 Connect Wallet
                 <Icon icon="ph:wallet-thin" width="16" height="16" className="ml-1" />
-              </div>
+              </NavigationMenuLink>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
               <DropdownMenuItem>Wallet</DropdownMenuItem>
