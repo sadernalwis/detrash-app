@@ -48,12 +48,14 @@ export const Menu = () => {
         <NavigationMenuItem>
           <NavigationMenuLink className={navigationMenuTriggerStyle()} href={LINKS.NAV.DASHBOARD}>
             Dashboard
-            <Icon
-              icon="material-symbols-light:team-dashboard-outline"
-              width="16"
-              height="16"
-              className="ml-1"
-            />
+            <Suspense>
+              <Icon
+                icon="material-symbols-light:team-dashboard-outline"
+                width="16"
+                height="16"
+                className="ml-1"
+              />
+            </Suspense>
           </NavigationMenuLink>
         </NavigationMenuItem>
 
