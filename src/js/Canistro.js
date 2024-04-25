@@ -100,6 +100,43 @@ export class Canistro/*  extends HTMLElement  */{
 		})
 	}						
 
+    async incoming(event, data){
+        switch (event) {
+            case 'queued':
+                // image.src = data? data:"../../../../../Environments/Medusa/Medallion.png";
+                break;
+            case 'pre-send':
+                // image.src = data? data:"../../../../../Environments/Medusa/Medallion.png";
+                break;
+            case 'sent':
+                // image.src = data? data:"../../../../../Environments/Medusa/Medallion.png";
+                break;
+            case 'error':
+                // image.src = data? data:"../../../../../Environments/Medusa/Medallion.png";
+                break;
+            case 'received':
+                let [gatepass, parseltongue, payload] = data
+                this.imageElement.src = URL.createObjectURL(payload)
+                // var img = document.createElement('img');
+                // img.src = URL.createObjectURL(payload);
+                // var texture = new THREE.Texture(img);
+                // this.instance_mesh.material.uniforms.textures[0].image.src = texture;
+                // this.instance_mesh.material.uniforms.textures[0].image.src = URL.createObjectURL(payload);
+                // this.instance_mesh.material.uniforms.textures[0].needsUpdate = true
+                // this.instance_mesh.material.needsUpdate = true
+                // this.instance_mesh.material.uniforms.textures[0] = map
+                // mesh.material.materials[0].map.image = { data: array, width: 20, height: 20 };
+                // mesh.material.materials[0].map.needsUpdate = true;
+                const buffer = await payload.arrayBuffer();
+                const metadata = readMetadata(buffer);
+                console.log(metadata)
+                return 1
+            default:
+                // submitter.src = data? data:"../../../../../Environments/Medusa/Medallion.png";
+                break;
+        }
+    }
+
 	async logout(){
 		const client = await this.client()
 		await client.logout();
@@ -167,3 +204,4 @@ const init = async () => {
 	setupToast(); };
 
 window.customElements.define('medusa-canistro', Canistro);
+
