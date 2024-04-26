@@ -2,7 +2,6 @@ import { type Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { cookies } from 'next/headers';
 
-import { Header } from '@/components/layouts/header';
 import { Toaster } from '@/components/ui/toaster';
 
 import Providers from './providers';
@@ -28,7 +27,6 @@ export default function RootLayout({
     <html lang={locale}>
       <body className={inter.className}>
         <Providers locale={locale}>
-          <Header />
           {children}
           <Toaster />
         </Providers>
