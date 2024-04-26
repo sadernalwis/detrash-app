@@ -15,14 +15,17 @@ import { Button } from '../ui/button';
 // Todo: add icons for each language
 const locales = [
   {
+    icon: '🇺🇸',
     name: 'English',
     value: 'en',
   },
   {
+    icon: '🇪🇸',
     name: 'Español',
     value: 'es',
   },
   {
+    icon: '🇵🇹',
     name: 'Português',
     value: 'pt',
   },
@@ -47,7 +50,9 @@ export default function LocaleToggler() {
             onClick={() => changeLocale(locale.value as typeof currentLocale)}
             disabled={locale.value === currentLocale}
           >
-            <span>{locale.name}</span>
+            <span>
+              {locale.name} {locale.icon}
+            </span>
             {locale.value === currentLocale ? (
               <DropdownMenuShortcut>
                 <CheckIcon className="h-4 w-4" />
