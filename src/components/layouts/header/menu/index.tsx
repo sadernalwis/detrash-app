@@ -5,6 +5,7 @@ import { useUser } from '@auth0/nextjs-auth0/client';
 import { Icon } from '@iconify/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 import LocaleToggler from '@/components/locale-toggler';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -42,7 +43,7 @@ export const Menu = () => {
         </NavigationMenuItem>
 
         <NavigationMenuItem>
-          <Link className={navigationMenuTriggerStyle()} href={LINKS.NAV.DASHBOARD}>
+          <Link className={`${navigationMenuTriggerStyle()}`} href={LINKS.NAV.DASHBOARD}>
             Dashboard
             <Icon
               icon="material-symbols-light:team-dashboard-outline"
@@ -93,7 +94,7 @@ export const Menu = () => {
             <DropdownMenuTrigger className="px-4">
               <Avatar>
                 <AvatarImage src={user?.picture ?? ''} alt="User profile" />
-                <AvatarFallback>{user?.name}</AvatarFallback>
+                <AvatarFallback className="text-xs">{user?.name}</AvatarFallback>
               </Avatar>
             </DropdownMenuTrigger>
             <DropdownMenuContent>
